@@ -1,0 +1,244 @@
+/* Header styling */
+.header {
+    background-color: #333; /* Dark gray background */
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; /* Aligns logo to the left and company name to the right */
+}
+
+/* Navigation Bar styling */
+nav {
+    display: flex;
+    justify-content: space-around; /* Equal spacing between navigation links */
+    width: 100%; /* Full width of the page */
+    background-color: #333; /* Dark gray background for visibility */
+}
+
+.nav-link {
+    padding: 10px 20px; /* Padding around navigation links for clickable area */
+    color: white; /* For better contrast and visibility */
+    text-decoration: none; /* Removes underline from links */
+}
+
+/* Ensures that links have a visual feedback on hover */
+.nav-link:hover {
+    background-color: #555; /* Slightly lighter gray for hover effect */
+}
+
+.company-name {
+    color: white; /* Sets the company name text color to white */
+    margin-left: auto; /* Pushes the company name to the left, centering it */
+    margin-top: 40px;
+    
+}
+
+/* About Us Section Alignment Fix */
+.about-us {
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd; /* Medium gray background */
+    padding: 20px;
+    margin: 20px;
+    width: 90%; /* Adjust the width of the flex container */
+    margin-left: auto; /* Align the flex container to the center horizontally */
+    margin-right: auto; 
+}
+
+/* Ensuring the <p> tag in the About Us section takes full width for proper alignment */
+.about-us p {
+    width: 100%; /* Ensures the paragraph uses the full width of its container */
+}
+
+/* Shop Now Button */
+.shop-now-btn {
+    background-color: #4CAF50; /* Green background */
+    padding: 10px;
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Rounded corners */
+    color: white; /* Text color */
+    margin: 20px; /* Margin around the button */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    margin-left: 4%; 
+}
+
+/* Ensures that button has a visual feedback on hover */
+.shop-now-btn:hover {
+    background-color: #45a049; /
+}
+
+/* Customer Reviews Section */
+.customer-reviews {
+    display: flex;
+    flex-direction: column; /* Organizes reviews in a column */
+    background-color: #ddd; /* Medium gray background */
+    padding: 20px;
+    margin: 20px;
+    width: 90%; /* Adjust the width of the flex container */
+    margin-left: auto; /* Align the flex container to the center horizontally */
+    margin-right: auto;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #333; /* Dark gray background */
+    padding: 10px;
+    margin: 0;
+    color: white; /* Text color */
+    text-align: center; /* Centers the copyright notice */
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust as needed */
+    gap: 20px;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    align-content: start; /* Align content at the start of the grid */
+    
+   
+}
+
+@media screen and (max-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust column width for smaller screens */
+        padding: 10px; /* Reduce padding for smaller screens */
+        margin: 10px; /* Reduce margin for smaller screens */
+    }
+}
+
+.product {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px; /* Adds margin around each product */
+    height: calc(50%-20px); 
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .product {
+        width: calc(100% - 40px); /* Each product takes up full container width on smaller screens */
+    }
+}
+
+
+.product img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product h2 {
+    margin: 10px 0;
+}
+
+.product .price {
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.product button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+   
+    border: none;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #45A049;
+}
+
+.product:hover {
+    background-color: #ffffff;
+}
+
+/* Style the Contact Information Section */
+.contact-info {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+/* Style the Contact Methods */
+.contact-method {
+    background-color: #ddd;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 10px;
+}
+
+/* Social Media Links Hover Effect */
+.contact-method ul li a:hover {
+    color: #007BFF;
+}
+
+/* Login Form Section */
+.login-form {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+/* Form Fields */
+.login-form label {
+    display: block;
+    margin: 10px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 200px; /* Adjust as needed */
+    
+
+}
+
+.login-form input[type="text"]::placeholder,
+.login-form input[type="password"]::placeholder {
+    color: #999; /* Placeholder text color */
+}
+
+/* Login Button */
+.login-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    opacity: 0.5;
+    transition: background-color 0.3s, opacity 0.3s;
+    border: none;
+}
+
+.login-btn:hover {
+    background-color: #45A049;
+    opacity: 1.0;
+}
+
+/* Signup Link */
+.signup-link {
+    color: #007BFF;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
