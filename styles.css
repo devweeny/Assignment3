@@ -96,8 +96,35 @@ nav {
     padding: 20px;
     margin: 20px;
     align-content: start; /* Align content at the start of the grid */
-    
-   
+}
+
+main {
+    background-color: #ddd;
+}
+
+.cart-list {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+}
+.cart-row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cart-row button {
+    background-color: #4CAF50; 
+    padding: 10px;
+    border: none; 
+    border-radius: 5px; 
+    color: white; 
+    margin: 16px 20px;
+    cursor: pointer; 
+}
+.cart-row button:hover {
+    background-color: #ff0000;
 }
 
 @media screen and (max-width: 768px) {
