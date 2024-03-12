@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>SignUp - CompanyCo</title>
+	</head>
+	<body>
+		<header class="header">
+			<div class="logo">
+				<!-- Logo has been designed by LOGO.com -->
+				<img src="logo.png" alt="Company Logo" width="100" />
+			</div>
+			<div class="company-name">Company Name</div>
+		</header>
+		<!-- Navigation Section -->
+		<nav>
+			<a href="index.html" class="nav-link">Home</a>
+			<a href="products.html" class="nav-link">Products</a>
+			<a href="contact.html" class="nav-link">Contact</a>
+			<a href="login.html" class="nav-link">Login</a>
+		</nav>
+
+		<main>
+			<section class="signup-form">
+				<form action="/submit-your-form-endpoint" method="post">
+					<label for="username">Username:</label>
+					<input
+						type="text"
+						id="username"
+						name="username"
+						required
+						placeholder="Enter username"
+					/>
+					<label for="password">Password:</label>
+					<input
+						type="password"
+						id="password"
+						name="password"
+						required
+						placeholder="Enter password"
+					/>
+					<label for="confirm-password">Confirm Password:</label>
+					<input
+						type="password"
+						id="confirm-password"
+						name="confirm-password"
+						required
+						placeholder="Confirm Password"
+					/>
+
+					<label for="email">Email:</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						required
+						placeholder="Enter Email "
+					/>
+					<button type="submit" class="signup-btn" onclick="getUsers()">
+						SignUp
+					</button>
+				</form>
+			</section>
+		</main>
+		<footer class="footer">
+			<p>&copy; 2024 Companyco. All rights reserved.</p>
+		</footer>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const form = document.querySelector("form");
+				form.addEventListener("submit", function (event) {
+					event.preventDefault(); // Prevent form submission to server for demonstration
+
+					const username = document.getElementById("username").value;
+					const password = document.getElementById("password").value;
+					const confirmPassword =
+						document.getElementById("confirm-password").value;
+					const email = document.getElementById("email").value;
+
+					const errors = [];
+
+					// Username validation
+					if (!/^[A-Za-z][A-Za-z0-9_-]{2,19}$/.test(username)) {
+						errors.push("Check the Username.");
+					}
+
+					// Password validation
+					if (
+						!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()\-_=+[\]{}|;:'",.<>?/`~]).{8,}/.test(
+							password
+						)
+					) {
+						errors.push("Password does not meet the requirements.");
+					}
+
+					// Confirm password validation
+					if (password !== confirmPassword) {
+						errors.push("Passwords doesn't match.");
+					}
+
+					// Email validation
+					if (!/^\S+@\S+\.\S+$/.test(email)) {
+						errors.push("Check the Email");
+					}
+
+					showMessage(errors.length ? errors.join("\n") : "Signup successful!");
+				});
+
+				function showMessage(message) {
+					// Remove existing message box if present
+					const existingBox = document.querySelector(".message-box");
+					if (existingBox) {
+						existingBox.remove();
+					}
+
+					// Create message box
+					const messageBox = document.createElement("div");
+					messageBox.className = "message-box";
+
+					if (Array.isArray(message)) {
+						message.forEach((msg) => {
+							const messageContent = document.createElement("p");
+							messageContent.textContent = msg;
+							messageBox.appendChild(messageContent);
+						});
+					} else {
+						const messageContent = document.createElement("p");
+						messageContent.textContent = message;
+						messageBox.appendChild(messageContent);
+					}
+
+					// Find the footer and insert the message box before the footer
+					const footer = document.querySelector(".footer");
+					document.body.insertBefore(messageBox, footer);
+				}
+			});
+		</script>
+	</body>
+</html>
