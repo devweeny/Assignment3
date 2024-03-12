@@ -7,6 +7,10 @@
     justify-content: space-between; /* Aligns logo to the left and company name to the right */
 }
 
+body {
+    margin: 0px;
+}
+
 /* Navigation Bar styling */
 nav {
     display: flex;
@@ -98,7 +102,7 @@ nav {
     align-content: start; /* Align content at the start of the grid */
 }
 
-main {
+.product-page {
     background-color: #ddd;
 }
 
@@ -257,6 +261,13 @@ main {
 .login-btn:hover {
     background-color: #45A049;
     opacity: 1.0;
+}
+
+.message-area {
+    border: 2px solid;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 20px;
 }
 
 /* Signup Link */

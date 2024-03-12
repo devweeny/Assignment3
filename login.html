@@ -40,7 +40,10 @@
                  <p>Don't have an account? <a href="signup.html" class="signup-link">Sign up here</a>.</p>
             </form>
            
-        </section>
+        </section>        
+        <div class="message-area" style="display: none;">
+            <p></p>
+        </div>
     </main>
 
     <script>
@@ -65,11 +68,11 @@
                         break;
                     }
                 }
-
+                document.querySelector(".message-area").style.display = "block";
                 if (success) {
-                    alert("Login successful");
+                    document.querySelector(".message-area").getElementsByTagName("p")[0].innerText = "Login successful!";
                 } else {
-                    alert("Login unsuccessful");
+                    document.querySelector(".message-area").getElementsByTagName("p")[0].innerText = "Login unsuccessful!";
                 }
 
 
